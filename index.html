@@ -30,7 +30,9 @@
           <div class="card">
             <ul class="list-group list-group-flush">
               <li class="list-group-item" v-for="(element, index) in tasks" :class="element.done === true ? 'text-decoration-line-through' : ''">
-                {{element.text}}</li>
+                {{element.text}}
+                <button @click="removeTask(index)" type="button" class="btn btn-outline-danger ms-auto">X</button>
+              </li>
             </ul>
           </div>
         </div>

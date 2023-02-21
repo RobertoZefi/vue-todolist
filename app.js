@@ -6,16 +6,25 @@ const { createApp } = Vue
         tasks: [
             {
                 text: 'Partecipare a lezione',
-                done: true 
+                done: false 
             },{
                 text: 'Fare esercizio assegnato',
-                done: false 
+                done: true 
             },{
                 text: 'Andare in palestra',
                 done: false 
-            }
-        ]
+            },
+        ],
+
+        numberTaskToRemove: 1,
 
       }
+    },
+
+    methods: {
+        removeTask(taskIndex){
+            console.log(taskIndex, this.numberTaskToRemove)
+            this.tasks.splice(taskIndex, this.numberTaskToRemove)
+        }
     }
   }).mount('#app')
