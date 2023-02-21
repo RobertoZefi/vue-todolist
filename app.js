@@ -32,14 +32,15 @@ const { createApp } = Vue
             this.newTask = ''
         },
 
-        changeTrueFalse(){
-            console.log(this.tasks.done)
-            if (this.tasks.done = false){
+        changeTrueFalse(element){
+            console.log(element)
+            if (element === false){
                 this.tasks.done = true
-            } else if (this.tasks.done = true){
+            } else {
                 this.tasks.done = false
             }
-            
+            console.log(this.tasks.done, this.tasks)
+            return this.tasks.done
         }
     }
   }).mount('#app')
