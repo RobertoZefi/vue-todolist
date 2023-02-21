@@ -18,10 +18,10 @@
                   <label for="inputPassword6" class="col-form-label">Inserisci nuova task</label>
                 </div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Nuova task">
+                  <input type="text" class="form-control" placeholder="Nuova task" v-model="newTask">
                 </div>
                 <div class="col-auto">
-                    <button class="btn btn-primary">Aggiungi</button>
+                    <button @click="addTask" class="btn btn-primary">Aggiungi</button>
                 </div>
               </div>
         </div>

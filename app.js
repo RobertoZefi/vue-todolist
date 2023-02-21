@@ -17,7 +17,7 @@ const { createApp } = Vue
         ],
 
         numberTaskToRemove: 1,
-
+        newTask: '',
       }
     },
 
@@ -25,6 +25,11 @@ const { createApp } = Vue
         removeTask(taskIndex){
             console.log(taskIndex, this.numberTaskToRemove)
             this.tasks.splice(taskIndex, this.numberTaskToRemove)
+        },
+
+        addTask(){
+            this.tasks.push({text: this.newTask, done:false})
+            this.newTask = ''
         }
     }
   }).mount('#app')
