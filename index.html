@@ -18,7 +18,7 @@
                   <label for="inputPassword6" class="col-form-label">Inserisci nuova task</label>
                 </div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Nuova task" v-model="newTask" @keyup.enter="addTask">
+                  <input type="text" class="form-control" placeholder="New task..." v-model="newTask" @keyup.enter="addTask">
                 </div>
                 <div class="col-auto">
                     <button @click="addTask" class="btn btn-primary">Aggiungi</button>
@@ -29,9 +29,11 @@
         <div class="container mt-5">
           <div class="card">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item" @click="changeTrueFalse" v-for="(element, index) in tasks" :class="element.done === true ? 'text-decoration-line-through' : '' ">
-                {{element.text}}
-                <button @click="removeTask(index)" type="button" class="btn btn-outline-danger ms-auto">X</button>
+              <li class="list-group-item d-flex align-items-center justify-content-between" @click="changeTrueFalse" v-for="(element, index) in tasks" :class="element.done === true ? 'text-decoration-line-through' : '' ">
+                <p class="mb-0"> {{element.text}} </p>
+                <div>
+                  <button @click="removeTask(index)" type="button" class="btn btn-outline-danger">X</button>
+                </div>
               </li>
             </ul>
           </div>
